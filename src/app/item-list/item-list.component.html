@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col">
+        <table class="table table-striped">
+            <thead>
+                <tr class="text-primary">
+                    <th><h4>Description</h4></th>
+                    <th><h4>Qty</h4></th>
+                    <th><h4>Unit price</h4></th>
+                    <th><h4>Total price</h4></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let list of lists">
+                    <td><h5>{{list.name}}</h5></td>
+                    <td><h5>{{list.quantity}}</h5></td>
+                    <td><h5>{{list.unitPrice}}</h5></td>
+                    <td><h5>{{calculateTotalPrice(list)}}</h5></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                      <div class="container mt-5" style="height: 2px; width: 100%; background-color: rgba(0, 0, 0,0.3);"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-muted"><h4>Notes :</h4></td>
+                    <td class="text-primary"><h4>Subtotal</h4></td>
+                    <td><h4>{{calculateSubtotal()}}</h4></td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td class="text-primary"><h4 >Adjustments</h4></td>
+                    <td class="text-secondary"><h4>100</h4></td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td><h1 class="text-danger">{{calculateTotalFinalPrice()}}</h1></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+
